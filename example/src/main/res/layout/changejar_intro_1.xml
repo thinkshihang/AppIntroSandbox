@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/main">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:background="@drawable/intro_background_1"
+        android:layout_weight="1">
+
+        <com.github.paolorotolo.appintroexample.ui.BetterTextView
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="3"
+            android:layout_gravity="center"
+            android:gravity="bottom"
+            android:textColor="#ffffff"
+            android:textSize="25sp"
+            app:fontTracking="0.3"
+            android:text="Coins are for Mario"
+            fontPath="fonts/Raleway-Light.ttf"/>
+
+        <com.github.paolorotolo.appintroexample.ui.BetterTextView
+            android:id="@+id/intro_text1"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="3"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textColor="#ffffff"
+            android:paddingLeft="64dp"
+            android:paddingRight="64dp"
+            android:textSize="16sp"
+            app:fontTracking="0.5"
+            android:text="Pay with cash and collect\nchange in your jar"
+            fontPath="fonts/Raleway-Light.ttf"/>
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="64dp" />
+    </LinearLayout>
+</LinearLayout>

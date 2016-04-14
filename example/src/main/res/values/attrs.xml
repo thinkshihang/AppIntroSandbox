@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="BetterTextView">
+        <!-- Positive tracking value for the text -->
+        <attr name="fontTracking" format="float" />
+        <!-- Defines the maximum size the view should attempt when scaling a font -->
+        <attr name="textSizeUpperBound" format="dimension" />
+        <!-- Defines the minimum size the view should attempt when scaling a font -->
+        <attr name="textSizeLowerBound" format="dimension" />
+        <!-- Define if the view should scale to fit its bounds -->
+        <attr name="autofit">
+            <enum name="none" value="0"/>
+            <enum name="width" value="1"/>
+            <enum name="height" value="2"/>
+        </attr>
+        <!-- Attempt to trim any excess padding added by TextView -->
+        <attr name="trimExcessPadding" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="TickedSeekbar">
+        <!-- Total height of the tick -->
+        <attr name="tickHeight" format="dimension" />
+        <!-- Total height of the tick -->
+        <attr name="tickWidth" format="dimension" />
+        <!-- Color of the tick -->
+        <attr name="tickColor" format="color" />
+        <!-- Size of the label text -->
+        <attr name="tickLabelSize" format="dimension" />
+        <!-- Color of the tick label -->
+        <attr name="tickLabelColor" format="color" />
+        <!-- Omit the first tick label -->
+        <attr name="drawFirstTick" format="boolean"/>
+        <!-- Draw the tick label below the bar -->
+        <attr name="drawTickLabelBelow" format="boolean"/>
+
+    </declare-styleable>
+</resources>
