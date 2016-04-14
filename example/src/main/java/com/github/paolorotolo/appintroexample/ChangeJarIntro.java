@@ -24,39 +24,13 @@ public class ChangeJarIntro extends AppIntro{
     @Override
     public void init(Bundle savedInstanceState) {
 
-        LinearLayout LL = new LinearLayout(this);
-
-        LL.setBackgroundColor(Color.GRAY);
-        LL.setOrientation(LinearLayout.VERTICAL);
-
-        LayoutParams LLParams = new LayoutParams(LayoutParams.MATCH_PARENT,LayoutParams.MATCH_PARENT);
-
-        LL.setWeightSum(3f);
-        LL.setLayoutParams(LLParams);
-
-        image = new ImageView(this);
-        image.setImageResource(R.drawable.onboarding_1);
-        image.setLayoutParams(new TableRow.LayoutParams(LayoutParams.MATCH_PARENT, 0, 2f));
-
-        LL.addView(image);
-
-        TextView sepratorView = (TextView)findViewById(R.id.bottom_separator);
-        sepratorView.setVisibility(View.INVISIBLE);
-
-        View viewPager = findViewById(R.id.view_pager);
-        ViewGroup rl = ((ViewGroup)viewPager.getParent());
-        ((ViewGroup)rl.getParent()).removeView(rl);
-        rl.setLayoutParams(new TableRow.LayoutParams(LayoutParams.MATCH_PARENT, 0, 1f));
-        LL.addView(rl);
-
-        setContentView(LL);
-
-
-//        addSlide(SampleSlide.newInstance(R.layout.intro_layout));
+        changeLayout();
 
         addSlide(SampleSlide.newInstance(R.layout.changejar_intro_1));
         addSlide(SampleSlide.newInstance(R.layout.changejar_intro_2));
         addSlide(SampleSlide.newInstance(R.layout.changejar_intro_3));
+
+        setFadeAnimation();
 
     }
 
@@ -97,9 +71,6 @@ public class ChangeJarIntro extends AppIntro{
                 break;
         }
 
-//        System.out.println(R.id.changejar_icon1);
-
-//        ImageView image = (ImageView)findViewById(R.id.changejar_icon1);
         if (image != null) {
             image.setImageResource(imageId);
         }
@@ -107,5 +78,40 @@ public class ChangeJarIntro extends AppIntro{
 
     public void getStarted(View v){
         loadMainActivity();
+    }
+
+    public void changeLayout() {
+        LinearLayout linearLayout = new LinearLayout(this);
+
+        linearLayout.setBackgroundColor(Color.GRAY);
+        linearLayout.setOrientation(LinearLayout.VERTICAL);
+
+        LayoutParams LLParams = new LayoutParams(LayoutParams.MATCH_PARENT,LayoutParams.MATCH_PARENT);
+
+        linearLayout.setWeightSum(3f);
+        linearLayout.setLayoutParams(LLParams);
+
+        image = new ImageView(this);
+        image.setImageResource(R.drawable.onboarding_1);
+        image.setLayoutParams(new TableRow.LayoutParams(LayoutParams.MATCH_PARENT, 0, 2f));
+
+        // formula: http://developer.android.com/guide/practices/screens_support.html#dips-pels
+        float scale = getResources().getDisplayMetrics().density;
+        int dpAsPixels = (int) (16*scale + 0.5f);
+        image.setPadding(dpAsPixels, 0, dpAsPixels, 0);
+        image.setScaleType(ImageView.ScaleType.FIT_END);
+
+        linearLayout.addView(image);
+
+        TextView sepratorView = (TextView)findViewById(R.id.bottom_separator);
+        sepratorView.setVisibility(View.INVISIBLE);
+
+        View viewPager = findViewById(R.id.view_pager);
+        ViewGroup rl = ((ViewGroup) viewPager.getParent());
+        ((ViewGroup) rl.getParent()).removeView(rl);
+        rl.setLayoutParams(new TableRow.LayoutParams(LayoutParams.MATCH_PARENT, 0, 1f));
+        linearLayout.addView(rl);
+
+        setContentView(linearLayout);
     }
 }
