@@ -3,6 +3,8 @@ package com.github.paolorotolo.appintroexample;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.support.v4.content.ContextCompat;
+import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewGroup.LayoutParams;
@@ -31,6 +33,8 @@ public class ChangeJarIntro extends AppIntro{
         addSlide(SampleSlide.newInstance(R.layout.changejar_intro_3));
 
         setFadeAnimation();
+
+        setImageNextButton(ContextCompat.getDrawable(getBaseContext(), R.drawable.btn_arrow));
     }
 
     private void loadMainActivity(){
@@ -85,23 +89,21 @@ public class ChangeJarIntro extends AppIntro{
     public void changeLayout() {
         LinearLayout linearLayout = new LinearLayout(this);
 
-        linearLayout.setBackgroundColor(Color.GRAY);
+        linearLayout.setBackgroundColor(Color.parseColor("#e5e5e9"));
         linearLayout.setOrientation(LinearLayout.VERTICAL);
 
-        LayoutParams LLParams = new LayoutParams(LayoutParams.MATCH_PARENT,LayoutParams.MATCH_PARENT);
-
-        linearLayout.setWeightSum(3f);
-        linearLayout.setLayoutParams(LLParams);
+        LayoutParams llParams = new LayoutParams(LayoutParams.MATCH_PARENT,LayoutParams.MATCH_PARENT);
+        linearLayout.setWeightSum(5f);
+        linearLayout.setLayoutParams(llParams);
+        linearLayout.setGravity(Gravity.CENTER);
 
         image = new ImageView(this);
         image.setImageResource(R.drawable.onboarding_1);
-        image.setLayoutParams(new TableRow.LayoutParams(LayoutParams.MATCH_PARENT, 0, 2f));
 
-        // formula: http://developer.android.com/guide/practices/screens_support.html#dips-pels
-        float scale = getResources().getDisplayMetrics().density;
-        int dpAsPixels = (int) (16*scale + 0.5f);
-        image.setPadding(dpAsPixels, 0, dpAsPixels, 0);
+        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LayoutParams.MATCH_PARENT, 0, 3f);
+        image.setLayoutParams(params);
         image.setScaleType(ImageView.ScaleType.FIT_END);
+        image.setAdjustViewBounds(true);
 
         linearLayout.addView(image);
 
@@ -111,7 +113,7 @@ public class ChangeJarIntro extends AppIntro{
         View viewPager = findViewById(R.id.view_pager);
         ViewGroup rl = ((ViewGroup) viewPager.getParent());
         ((ViewGroup) rl.getParent()).removeView(rl);
-        rl.setLayoutParams(new TableRow.LayoutParams(LayoutParams.MATCH_PARENT, 0, 1f));
+        rl.setLayoutParams(new LinearLayout.LayoutParams(LayoutParams.MATCH_PARENT, 0, 2f));
         linearLayout.addView(rl);
 
         setContentView(linearLayout);
