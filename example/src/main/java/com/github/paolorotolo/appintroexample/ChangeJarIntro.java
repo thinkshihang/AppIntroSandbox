@@ -31,7 +31,6 @@ public class ChangeJarIntro extends AppIntro{
         addSlide(SampleSlide.newInstance(R.layout.changejar_intro_3));
 
         setFadeAnimation();
-
     }
 
     private void loadMainActivity(){
@@ -59,6 +58,7 @@ public class ChangeJarIntro extends AppIntro{
     public void onSlideChanged() {
 
         int imageId = 0;
+        boolean skipButtonState = true;
         switch (this.pager.getCurrentItem()) {
             case 0:
                 imageId = R.drawable.onboarding_1;
@@ -68,12 +68,14 @@ public class ChangeJarIntro extends AppIntro{
                 break;
             case 2:
                 imageId = R.drawable.onboarding_3;
+                skipButtonState = false;
                 break;
         }
 
         if (image != null) {
             image.setImageResource(imageId);
         }
+        showSkipButton(skipButtonState);
     }
 
     public void getStarted(View v){
