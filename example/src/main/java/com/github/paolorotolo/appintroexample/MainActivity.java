@@ -52,6 +52,11 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void launchLogin(View v) {
+        Intent intent = new Intent(this, LoginActivity.class);
+        startActivity(intent);
+    }
+
     public void startDefaultIntro(View v){
         Intent intent = new Intent(this, DefaultIntro.class);
         startActivity(intent);

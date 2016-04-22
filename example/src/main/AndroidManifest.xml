@@ -28,6 +28,16 @@
             android:theme="@style/FullscreenTheme">
         </activity>
         <activity
+            android:name=".LoginActivity"
+            android:label="LoginActivity"
+            android:theme="@style/FullscreenTheme">
+        </activity>
+        <activity
+            android:name=".SignupActivity"
+            android:label="SignupActivity"
+            android:theme="@style/FullscreenTheme">
+        </activity>
+        <activity
             android:name=".DefaultIntro"
             android:label="@string/title_activity_default_intro"
             android:theme="@style/FullscreenTheme">
