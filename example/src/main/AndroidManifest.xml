@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.github.paolorotolo.appintroexample" >
+    package="com.github.paolorotolo.appintroexample">
 
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
@@ -11,11 +11,11 @@
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme" >
+        android:theme="@style/AppTheme">
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
-            android:launchMode="singleTask" >
+            android:launchMode="singleTask">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -25,44 +25,43 @@
         <activity
             android:name=".ChangeJarIntro"
             android:label="ChangeJarIntro"
-            android:theme="@style/FullscreenTheme">
-        </activity>
+            android:theme="@style/FullscreenTheme"></activity>
         <activity
             android:name=".LoginActivity"
             android:label="LoginActivity"
-            android:theme="@style/FullscreenTheme">
-        </activity>
+            android:theme="@style/FullscreenTheme"></activity>
         <activity
             android:name=".SignupActivity"
             android:label="SignupActivity"
-            android:theme="@style/FullscreenTheme">
-        </activity>
+            android:theme="@style/FullscreenTheme"></activity>
         <activity
             android:name=".DefaultIntro"
             android:label="@string/title_activity_default_intro"
-            android:theme="@style/FullscreenTheme">
-        </activity>
+            android:theme="@style/FullscreenTheme"></activity>
         <activity
             android:name=".CustomIntro"
             android:label="@string/title_activity_custom_intro"
-            android:theme="@style/FullscreenTheme">
-        </activity>
-        <activity android:name=".PermissionsIntro"
+            android:theme="@style/FullscreenTheme"></activity>
+        <activity
+            android:name=".PermissionsIntro"
             android:label="@string/title_activity_permissions_intro"
-            android:theme="@style/FullscreenTheme"/>
+            android:theme="@style/FullscreenTheme" />
         <activity
             android:name=".PermissionsIntro2"
             android:label="@string/title_activity_permissions_intro"
             android:theme="@style/FullscreenTheme" />
-        <activity android:name=".SecondLayoutIntro"
+        <activity
+            android:name=".SecondLayoutIntro"
             android:label="@string/title_activity_second_intro"
-            android:theme="@style/FullscreenTheme"/>
-        <activity android:name=".DisableSwipeIntro1"
+            android:theme="@style/FullscreenTheme" />
+        <activity
+            android:name=".DisableSwipeIntro1"
             android:label="@string/title_activity_default_intro_disable"
-            android:theme="@style/FullscreenTheme"/>
-        <activity android:name=".DisableSwipeIntro2"
+            android:theme="@style/FullscreenTheme" />
+        <activity
+            android:name=".DisableSwipeIntro2"
             android:label="@string/title_activity_second_intro_disable"
-            android:theme="@style/FullscreenTheme"/>
+            android:theme="@style/FullscreenTheme" />
         <activity android:name=".animations.CustomAnimation" />
         <activity android:name=".animations.FadeAnimation" />
         <activity android:name=".animations.ZoomAnimation" />
@@ -73,9 +72,25 @@
         <activity android:name=".indicators.ProgressIndicator" />
         <activity android:name=".indicators.CustomIndicator" />
         <activity android:name=".indicators.CustomColorIndicator" />
-        <activity android:name=".IntroWithBackground"
+        <activity
+            android:name=".IntroWithBackground"
             android:label="Intro with background"
-            android:theme="@style/FullscreenTheme"/>
+            android:theme="@style/FullscreenTheme" />
+        <!--
+             The API key for Google Maps-based APIs is defined as a string resource.
+             (See the file "res/values/google_maps_api.xml").
+             Note that the API key is linked to the encryption key used to sign the APK.
+             You need a different API key for each encryption key, including the release key that is used to
+             sign the APK for publishing.
+             You can define the keys for the debug and release targets in src/debug/ and src/release/. 
+        -->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+
+        <activity
+            android:name=".ui.MapActivity"
+            android:label="@string/title_activity_map"></activity>
     </application>
 
 </manifest>

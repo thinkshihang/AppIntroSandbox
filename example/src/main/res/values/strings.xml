@@ -32,4 +32,5 @@
     <string name="permission_intro">Intro with Permissions</string>
     <string name="permission_intro2">Intro with Permissions 2</string>
     <string name="title_activity_permissions_intro">Permissions Intro</string>
+    <string name="title_activity_map">Map</string>
 </resources>

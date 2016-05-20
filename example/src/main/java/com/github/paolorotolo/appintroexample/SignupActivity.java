@@ -11,6 +11,6 @@ public class SignupActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle s) {
         super.onCreate(s);
-        setContentView(R.layout.signup_activity);
+        setContentView(R.layout.signup_activity_2);
     }
 }

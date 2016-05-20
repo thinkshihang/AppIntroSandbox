@@ -19,7 +19,7 @@
             android:layout_marginBottom="24dp"
             android:layout_gravity="center_horizontal" />
 
-        <!-- User Label -->
+        <!-- User name Label -->
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -59,16 +59,6 @@
             android:text="Login"
             android:textColor="#ffffff"
             android:background="#05a434"/>
-
-        <TextView android:id="@+id/link_signup"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="12dp"
-            android:text="Don't have an account? Create one"
-            android:gravity="center"
-            android:textSize="16dip"
-            android:textColor="#e1dada"
-            android:onClick="showSignupActiviy"/>
 
         <TextView android:id="@+id/forget_password"
             android:layout_width="fill_parent"

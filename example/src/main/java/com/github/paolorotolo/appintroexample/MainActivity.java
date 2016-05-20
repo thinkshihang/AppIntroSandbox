@@ -17,6 +17,7 @@ import com.github.paolorotolo.appintroexample.animations.ZoomAnimation;
 import com.github.paolorotolo.appintroexample.indicators.CustomColorIndicator;
 import com.github.paolorotolo.appintroexample.indicators.CustomIndicator;
 import com.github.paolorotolo.appintroexample.indicators.ProgressIndicator;
+import com.github.paolorotolo.appintroexample.ui.MapActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -46,6 +47,12 @@ public class MainActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_main);
     }
+
+    public void showMap(View v) {
+        Intent intent = new Intent(this, MapActivity.class);
+        startActivity(intent);
+    }
+
     // todo hang: sand box here
     public void changeJarIntro(View v) {
         Intent intent = new Intent(this, ChangeJarIntro.class);
