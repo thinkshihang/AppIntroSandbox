@@ -29,7 +29,9 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback,
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_map);
 
-        mGoogleApiClient = new GoogleApiClient.Builder(this).addApi(LocationServices.API).build();
+        mGoogleApiClient = new GoogleApiClient.Builder(this)
+                .addConnectionCallbacks(this)
+                .addApi(LocationServices.API).build();
 
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
@@ -66,11 +68,8 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback,
 
         mUiSettings = mMap.getUiSettings();
 
-
         try {
-
             mMap.setMyLocationEnabled(true);
-
         } catch (SecurityException e) {
             Toast.makeText(this, "Permission denied.", Toast.LENGTH_SHORT).show();
         }
