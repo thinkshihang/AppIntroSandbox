@@ -1,11 +1,10 @@
 package com.github.paolorotolo.appintroexample;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.Toast;
 
 import com.github.paolorotolo.appintroexample.animations.ColorAnimation;
 import com.github.paolorotolo.appintroexample.animations.CustomAnimation;
@@ -17,51 +16,25 @@ import com.github.paolorotolo.appintroexample.animations.ZoomAnimation;
 import com.github.paolorotolo.appintroexample.indicators.CustomColorIndicator;
 import com.github.paolorotolo.appintroexample.indicators.CustomIndicator;
 import com.github.paolorotolo.appintroexample.indicators.ProgressIndicator;
-import com.github.paolorotolo.appintroexample.ui.MapActivity;
+import com.github.paolorotolo.appintroexample.ui.MyDialogFragment;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements MyDialogFragment.DialogButtonClickListener
+{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        // todo hang: make intro activity run only once
-        Thread t = new Thread(new Runnable() {
-            @Override
-            public void run() {
-                SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
-                boolean isFirstStart = sharedPreferences.getBoolean("firstTimeRunChangeJar", true);
-                if (isFirstStart) {
-                    Intent intent = new Intent(MainActivity.this, ChangeJarIntro.class);
-                    startActivity(intent);
-
-                    SharedPreferences.Editor editor = sharedPreferences.edit();
-                    editor.putBoolean("firstTimeRunChangeJar", false);
-
-                    editor.apply();
-                }
-            }
-        });
-
-        t.start();
-
         setContentView(R.layout.activity_main);
     }
 
-    public void showMap(View v) {
-        Intent intent = new Intent(this, MapActivity.class);
-        startActivity(intent);
+    public void startDialogTest(View v) {
+        MyDialogFragment dialog =  new MyDialogFragment();
+        dialog.show(getSupportFragmentManager(), null);
     }
 
-    // todo hang: sand box here
-    public void changeJarIntro(View v) {
-        Intent intent = new Intent(this, ChangeJarIntro.class);
-        startActivity(intent);
-    }
-
-    public void launchLogin(View v) {
-        Intent intent = new Intent(this, LoginActivity.class);
-        startActivity(intent);
+    @Override
+    public void onDialogButtonClick(String content) {
+        Toast.makeText(MainActivity.this, "success: " + content, Toast.LENGTH_SHORT).show();
     }
 
     public void startDefaultIntro(View v){

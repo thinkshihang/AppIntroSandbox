@@ -16,22 +16,8 @@
             android:layout_gravity="center"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick="showMap"
-            android:text="Show Map" />
-
-        <Button
-                android:layout_gravity="center"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:onClick="changeJarIntro"
-                android:text="Change Jar" />
-
-        <Button
-            android:layout_gravity="center"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="launchLogin"
-            android:text="Login" />
+            android:onClick="startDialogTest"
+            android:text="@string/default_intro"/>
 
         <Button
                 android:layout_gravity="center"

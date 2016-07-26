@@ -1,36 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.percent.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/intro_background_2">
-
-    <com.github.paolorotolo.appintroexample.ui.BetterTextView
-        android:id="@+id/intro_title_2"
-        app:layout_marginTopPercent="20%"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:textColor="#ffffff"
-        android:textSize="31dp"
-        android:text="Easy come, easy go"
-        fontPath="fonts/Raleway-Light.ttf"/>
-
-    <com.github.paolorotolo.appintroexample.ui.BetterTextView
-        android:id="@+id/intro_text2"
-        android:layout_below="@id/intro_title_2"
-        app:layout_marginTopPercent="5%"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:gravity="center"
-        android:textColor="#ffffff"
-        android:textSize="18dp"
-        android:text="Scan your jar to collect \n or spend change"
-        fontPath="fonts/Raleway-Light.ttf"/>
+    android:background="#00BCD4"
+    android:layout_weight="10"
+    android:id="@+id/main">
 
     <TextView
-        android:layout_alignParentBottom="true"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="3"
+        android:layout_gravity="center"
+        android:gravity="bottom"
+        android:textColor="#ffffff"
+        android:paddingLeft="64dp"
+        android:paddingRight="64dp"
+        android:textSize="25dp"
+        android:text="Easy come, easy go"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="3"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textColor="#ffffff"
+        android:paddingLeft="64dp"
+        android:paddingRight="64dp"
+        android:textSize="16dp"
+        android:text="Scan your jar to collect or spend change"/>
+
+    <TextView
         android:layout_width="fill_parent"
         android:layout_height="64dp" />
-</android.support.percent.PercentRelativeLayout>
+</LinearLayout>

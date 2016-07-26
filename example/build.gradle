@@ -6,7 +6,7 @@ android {
 
     defaultConfig {
         applicationId "paolorotolo.github.com.appintroexample"
-        minSdkVersion 14
+        minSdkVersion 21
         targetSdkVersion 23
         versionCode 6
         versionName "3.4.0"
@@ -27,15 +27,12 @@ android {
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     //noinspection GradleDependency
+    compile 'com.android.support:appcompat-v7:23.1.1'
     compile project(':library')
 
+
     // test dependencies
-//    androidTestCompile 'com.android.support:appcompat-v7:23.1.1'
-//    androidTestCompile 'com.android.support.test:runner:0.4.1'
-//    androidTestCompile 'com.android.support.test.espresso:espresso-core:2.2.1'
-    compile 'com.android.support:appcompat-v7:23.3.0'
-    compile 'com.android.support:percent:23.1.1'
-    compile 'com.android.support:design:23.3.0'
-    compile 'com.xwray:passwordview:0.1'
-    compile 'com.google.android.gms:play-services:8.4.0'
+    androidTestCompile 'com.android.support:appcompat-v7:23.1.1'
+    androidTestCompile 'com.android.support.test:runner:0.4.1'
+    androidTestCompile 'com.android.support.test.espresso:espresso-core:2.2.1'
 }

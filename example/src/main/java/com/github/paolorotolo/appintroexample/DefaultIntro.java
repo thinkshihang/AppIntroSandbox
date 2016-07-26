@@ -6,14 +6,14 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.github.paolorotolo.appintro.AppIntro;
+//import com.github.paolorotolo.appintro.AppIntro2;
 
 public class DefaultIntro extends AppIntro {
     @Override
     public void init(Bundle savedInstanceState) {
-        addSlide(SampleSlide.newInstance(R.layout.intro));
-        addSlide(SampleSlide.newInstance(R.layout.intro2));
-        addSlide(SampleSlide.newInstance(R.layout.intro3));
-        addSlide(SampleSlide.newInstance(R.layout.intro4));
+        addSlide(SampleSlide.newInstance(R.layout.changejar_intro_1));
+        addSlide(SampleSlide.newInstance(R.layout.changejar_intro_2));
+        addSlide(SampleSlide.newInstance(R.layout.changejar_intro_3));
     }
 
     private void loadMainActivity(){
